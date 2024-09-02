@@ -14,7 +14,7 @@ class LoggerTypeSelectForm extends Model {
     public function rules()
     {
         return [
-            [['message', 'string'], 'required'],
+            [['message'], 'required'],
             ['type', 'string'],
             ['to_all', 'boolean'],
         ];

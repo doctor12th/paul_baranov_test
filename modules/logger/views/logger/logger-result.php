@@ -7,9 +7,9 @@ use yii\helpers\Html;
 $this->title = 'Result';
 
 if (is_null($model->type)) {
-    $message = $model->message . "was sent to all availabel logger types.";
+    $message = "'" . $model->message . "' was sent to all availabel logger types.";
 } else {
-    $message = $model->message ." was sent with type" . $model->type;
+    $message = "'" . $model->message ."' was sent with type" . $model->type;
 }
 ?>
-<h2>"<?= Html::encode($message) ?>.</h2>
+<h2><?= Html::encode($message) ?>.</h2>

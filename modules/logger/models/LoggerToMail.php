@@ -13,9 +13,10 @@ class LoggerToMail implements LoggerInterface {
      * {@inheritDoc}
      */
     public function log(string $message): void {
+        $params = Yii::$app->getModule('logger')->params;
         Yii::$app->mailer->compose()
-            ->setTo(Yii::$app->params['mail_to_log'])
-            ->setFrom(Yii::$app->params['mail_from'])
+            ->setTo($params['mail_to_log'])
+            ->setFrom($params['mail_from'])
             ->setSubject('Some action happened!')
             ->setHtmlBody($message)
             ->send();

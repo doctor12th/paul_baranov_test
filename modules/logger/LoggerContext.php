@@ -29,7 +29,7 @@ class LoggerContext implements LoggerContextInterface {
      */
     public function sendByLogger(string $message, string $loggerType): void {
         $this->setType($loggerType);
-        $this->handler->send($message);
+        $this->handler->log($message);
     }
 
     /**
